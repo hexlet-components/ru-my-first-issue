@@ -1,3 +1,4 @@
+[![.github/workflows/issue.yml](https://github.com/hexlet-components/ru-my-first-issue/actions/workflows/issue.yml/badge.svg)](https://github.com/hexlet-components/ru-my-first-issue/actions/workflows/issue.yml) [![Tests](https://github.com/hexlet-components/ru-my-first-issue/actions/workflows/main.yml/badge.svg)](https://github.com/hexlet-components/ru-my-first-issue/actions/workflows/main.yml)
 ## Самостоятельная работа
 
 Составьте баг-репорт на любой баг. Попробуйте самостоятельно найти баг в любом приложении. Самое главное тут — попрактиковаться в составлении баг-репорта. Поэтому это может быть даже не существующий баг.
