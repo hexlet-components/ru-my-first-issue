@@ -5,21 +5,15 @@ jobs:
   check-issue:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: Check Issue title
         run: |
-          if [[ "${{ github.event.issue.title }}" =~ ^Bug:.* ]]; then
-              echo "ISSUE_TITLE_VALID=true" >> $GITHUB_ENV
-          else
-              echo "ISSUE_TITLE_VALID=false" >> $GITHUB_ENV
-          fi
+          echo "ISSUE_TITLE_VALID=$(echo '${{ github.event.issue.title }}' | bash title.sh)" >> $GITHUB_ENV
+
       - name: Check Issue body
         run: |
-          re='## Summary\n*([\w|\W]*)\n*## Environment\n*([\w|\W]*)\n*## Steps to reproduce\n*([\w|\W]*)\n*## Expected result\n*([\w|\W]*)\n*## Actual result\n*([\w|\W]*)'
-          if [[ "${{ github.event.issue.body }}" =~ "$re" ]]; then
-              echo "ISSUE_BODY_VALID=true" >> $GITHUB_ENV
-          else
-              echo "ISSUE_BODY_VALID=false" >> $GITHUB_ENV
-          fi
+          echo "ISSUE_BODY_VALID=$(echo '${{ github.event.issue.body }}' | bash body.sh)" >> $GITHUB_ENV
 
       - name: debug
         run: |
