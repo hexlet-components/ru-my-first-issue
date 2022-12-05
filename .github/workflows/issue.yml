@@ -15,7 +15,7 @@ jobs:
       - name: Check Issue body
         run: |
           re='## Summary\n*([\w|\W]*)\n*## Environment\n*([\w|\W]*)\n*## Steps to reproduce\n*([\w|\W]*)\n*## Expected result\n*([\w|\W]*)\n*## Actual result\n*([\w|\W]*)'
-          if [[ echo "$opt" | tr -d '"' =~ "$re" ]]; then
+          if [[ "${{ github.event.issue.body }}" =~ "$re" ]]; then
               echo "ISSUE_BODY_VALID=true" >> $GITHUB_ENV
           else
               echo "ISSUE_BODY_VALID=false" >> $GITHUB_ENV
