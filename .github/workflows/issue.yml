@@ -5,7 +5,7 @@ jobs:
   check-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
 
       - name: Check Issue title
         run: |
@@ -20,7 +20,7 @@ jobs:
           echo "${{ env.ISSUE_BODY_VALID }}"
 
       - name: Create comment
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v5
         if: ${{ env.ISSUE_BODY_VALID != 'true' }}
         with:
           issue-number: ${{ github.event.issue.number }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Close Issue
         if: ${{ env.ISSUE_BODY_VALID == 'true' }}
-        uses: peter-evans/close-issue@v2
+        uses: peter-evans/close-issue@v3
         with:
           comment: |
             Баг-репорт корректный. Успешно закрыто!
