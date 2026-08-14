@@ -24,3 +24,11 @@ title: |
 ## Actual result
 
 Какой результат получился на самом деле
+
+## Severity
+
+Блокирующий (Blocker), Критический (Critical), Значительный (Major), Незначительный (Minor) или Тривиальный (Trivial)
+
+## Priority
+
+Высокий (High), Средний (Medium) или Низкий (Low)

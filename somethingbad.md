@@ -22,3 +22,11 @@ JavaScript	V8 10.63.124.23
 ## Actual result
 
 Появилось ошибка при попытке открыть сайт "410"
+
+## Severity
+
+Блокирующий (Blocker)
+
+## Priority
+
+Высокий (High)
