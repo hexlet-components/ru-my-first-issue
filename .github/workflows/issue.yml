@@ -8,12 +8,16 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Check Issue title
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          echo "ISSUE_TITLE_VALID=$(echo '${{ github.event.issue.title }}' | bash title.sh)" >> $GITHUB_ENV
+          echo "ISSUE_TITLE_VALID=$(echo "$ISSUE_TITLE" | bash title.sh)" >> $GITHUB_ENV
 
       - name: Check Issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          echo "ISSUE_BODY_VALID=$(echo '${{ github.event.issue.body }}' | bash body.sh)" >> $GITHUB_ENV
+          echo "ISSUE_BODY_VALID=$(echo "$ISSUE_BODY" | bash body.sh)" >> $GITHUB_ENV
 
       - name: debug
         run: |
